@@ -27,10 +27,11 @@
 
 
 \title{Conceptualising a co-operative building evolution dashboard on city regions over the past decades for densification studies}
-\author{Bénédicte Bucher$^{1}$, Mouhamadou Ndim$^{1}$, Ana-Maria Raimond$^{1}$, Juste Raimbault$^{1}$, Julien Perret$^{1}$, Sebastian Dembski$^{2}$, Mathias Jehling$^{3}$}
+\author{Bénédicte Bucher$^{1}$, Mouhamadou Ndim$^{1}$, Ana-Maria Raimond$^{1}$, Juste Raimbault$^{1, \ast}$, Julien Perret$^{1}$, Sebastian Dembski$^{2}$, Mathias Jehling$^{3}$}
 \institute{$^{1}$ LASTIG, Univ. Gustave Eiffel, IGN-ENSG\\
 $^{2}$ University of Liverpool\\
-$^{3}$ Leibniz Institute of Ecological Urban and Regional Development
+$^{3}$ Leibniz Institute of Ecological Urban and Regional Development\\\vspace*{0.5em}
+$^{\ast}$ \texttt{juste.raimbault@ign.fr}
 }
 \titlegraphic{}
 
@@ -38,7 +39,7 @@ $^{3}$ Leibniz Institute of Ecological Urban and Regional Development
 % Don't hesitate to modify the positions if it doesn't suit you
 \makeatletter
 \renewcommand\TP@maketitle{
-    \vspace*{-8cm}
+    \vspace*{-7cm}
     
     \hspace{.2\textwidth}
     
@@ -46,7 +47,7 @@ $^{3}$ Leibniz Institute of Ecological Urban and Regional Development
 	    %logo box 1
     	\begin{minipage}[b][.15\textheight][b]{.1\textwidth}
 
-            \vspace{-3cm}
+            
         	\includegraphics[width=\linewidth]{./figures/LOGO_IGN}\\
             
              \vspace{1cm}
@@ -110,19 +111,26 @@ $^{3}$ Leibniz Institute of Ecological Urban and Regional Development
 %------------------------------------------------------
 % block alone on its line so you don't have to specify the columns environment
 
+\vspace*{-5cm}
 
 		%==============================================
 		\block[titlewidthscale=0.5]{Context: The SubDense project}{
 
             
 			\begin{itemize}
-				\item Suburban densification can yield more \emph{sustainable cities} while avoiding over-densification in centres.
-				\item Coexistence of \emph{multiple rationalities} for involved stakeholders imply considerable \emph{planning challenges}.
+				\item Suburban densification can yield more \emph{sustainable cities} while avoiding issues linked to over-densification in centres.
+				\item \emph{Multiple rationalities} of involved stakeholders (landowners, policy-makers) imply considerable \emph{planning challenges}.
 			\end{itemize}
 
                  \bigskip
 
-                The \textbf{SubDense} European project aims at better understanding how diverse \textbf{strategies of land policy} shape suburban densification across different \textbf{planning systems} (France, Germany, UK).
+                The \textbf{SubDense} European project aims at better understanding how diverse \textbf{strategies of land policy} shape suburban densification across different \textbf{planning systems} (France, Germany, UK), from qualitative and quantitative viewpoints, looking in particular at \textbf{urban change dynamics at the building level} in 6 comparable city regions in these countries.
+
+                \bigskip
+
+                % However, the use of building data products require an expert knowledge for a proper application to change detection, including specification details and changes in these specifications. Furthermore, experts from different countries must be able to share this knowledge and their interpretation. They also should be able to share and reproduce quantitative analysis. Finally, concepts with multiple definitions, such as suburbia or densification itself, should be discussed between experts to reach a consensus on what is studied.
+
+                \textbf{Research question:} \textit{how to ensure in that context the sharing of expert knowledge on different data specifications across countries, of diverse interpretations, analysis methods and tools, and of concepts with multiple definitions?}
    
 		}
 		%==============================================
@@ -132,17 +140,27 @@ $^{3}$ Leibniz Institute of Ecological Urban and Regional Development
 	
 	%==============================================
 	\block[titlewidthscale=0.5]{Collaborative dashboard}{
-		\parbox{0.5\textwidth}{
+		\parbox{0.33\textwidth}{
 			\begin{mdframed}
                 \includegraphics[width=\linewidth]{figures/dashboard.png}
 		      \end{mdframed}
             }
-         \hspace{1cm}
-		\parbox{0.3\textwidth}{
+         \hspace{0.5cm}
+		\parbox{0.54\textwidth}{
             
-            $\rightarrow$ A \textbf{collaborative dashboard} as a medium to \textbf{facilitate collaboration} between partners, \textbf{share methods, data and metadata} \cite{bucher2020conciliating}, and ensure reproducibility 
+            $\rightarrow$ A \textbf{collaborative dashboard} as a medium to \textbf{facilitate collaboration} between partners, \textbf{share methods, data and metadata}, and ensure reproducibility.
 
-            
+            \bigskip
+
+            % The scope and functionalities of the dashboard are defined through an iterative a co-operative process, by considering ``User Stories'' that detail the expected contributions and motivation of different dashboard contributors and users. For example, qualitative researchers in urban policy act more as map readers and need to communicate their interpretations with local stakeholders, while a quantitative urban analyst will seek to run algorithms for change detection on multiple data sources, to finally produce maps used by the former. We show in Fig.~\ref{fig:dashboard} the current state of dashboard functionalities and usage, which can always evolve in the future.
+
+            $\rightarrow$ Scope and functionalities of the dashboard defined iteratively by constructing ``User Stories'' with dashboard contributors and users.
+
+            \bigskip
+             
+            % The core components of the dashboard are: (i) a registry for concepts, maps,  datasources, datasets, processes ; (ii) shared models for describing these items  ; (iii) shared libraries and software for computing building evolution and producing maps ; (iv) different clients to interact with the previous components (including a web application displaying maps, which corresponds to the more classical view of a ``dashboard'').
+
+            $\rightarrow$ Core components are \textbf{registries} for concepts, maps, datasources, datasets, processes; shared \textbf{models} describing these; shared \textbf{libraries and software}; diverse \textbf{clients} to interact with these.
    
 		}
 		%==============================================
@@ -150,45 +168,68 @@ $^{3}$ Leibniz Institute of Ecological Urban and Regional Development
 
 
         \block[titlewidthscale=0.5]{Architecture and implementation}{
-
-            \parbox{0.5\textwidth}{
+            \parbox{0.3\textwidth}{
 			\begin{mdframed}
-                \includegraphics[width=\linewidth]{figures/dashboard.png}
+                \includegraphics[width=\linewidth]{figures/archi.png}
 		      \end{mdframed}
             }
+            \hspace{0.5cm}
+		\parbox{0.6\textwidth}{
          
-			$\rightarrow$ The \textbf{git-based architecture} for the core dashboard ensures tractability, full history, reproducibility, flexibility, and collaboration through branching, shared remote repository (\url{https://github.com/subdense}).
+			$\rightarrow$ The \textbf{git-based architecture} for the dashboard ensures tractability, reproducibility, and collaboration: core registries are stored and edited in a shared git repository: \url{https://github.com/subdense}.
 
             \bigskip
+
+            % At this stage, three types of clients are proposed to interact with the dashboard: (i) the git client itself, by directly committing changes to the repository; (ii) a website, deployed automatically through github pages at \url{https://subdense.github.io/dashboard/}, for which user feedback is collected using a Javascript git library (currently under implementation); (iii) the open software QGIS for processing data, map reading and enrichment (python plugins for QGIS which run processes from the dashboard are also currently being implemented, and map style sheets are provided).
     
-            $\rightarrow$ Clients implement interactions with the core and functionalities needed by partners for data analysis and integration (running change detection algorithms, adding data, exploring results and maps, \ldots).
+            $\rightarrow$ Clients implement interactions with the core and functionalities needed by partners for data analysis and integration (running change detection algorithms, adding data, exploring results and maps, providing Geospatial User Feedback, \ldots): \textbf{git clients} for direct edition; a \textbf{website} at \url{https://subdense.github.io/dashboard/} to explore results and provide feedback; \textbf{QGIS plugins} to run algorithms.
 
 
            % $\rightarrow$ An iterative process to produce \textbf{user stories}, finally leading to some specifications for the core architecture and functionalities of clients.
 
+            }
 
         }
 
          
-%------------------------------------------------------
-%----------------LINE 4--------------------------------
-%------------------------------------------------------
 
-	\begin{columns}
-		%In this block you can specify possible improvment or any extra information
-		\column{0.4}
 		%==============================================
-		\block[titlewidthscale=0.65]{Future work}{
-			\begin{itemize}
-				\item \emph{heterogeneous data integration} \cite{bucher2021towards}, to couple densification analysis with socio-economic data;
-                \item develop and explore \emph{simulation models} for the impact of policies on densification processes, parametrise these models with the qualitative data obtained through interviews during the project.
-			\end{itemize}
+		\block[titlewidthscale=0.95]{Application: Building change detection and Geospatial User Feedback}{
+
+                %Processes in the dashboard include step-by-step descriptions of how a user retrieved data, processed it, produce maps, etc., but furthermore automated processes to run algorithms analysing data. One key process is change detection in building data, for which we use vector data matching algorithms \citep{olteanu2015knowledge}. Building features between two dates are matched using the Geometric Matching of Areas algorithm \citep{harvey1998geometric}, are then automatically interpreted as changes following a \texttt{BuildingFeatureEvolution} model following \cite{claramunt1997qualitative}, and finally filtered to distinguish specific cases of evolutions due to changes in data sources (for example, for France IGN BDTOPO changed between 2011 and 2021 the minimum threshold to include buildings and the way to compute building boundaries).
+
+
+                %Maps are then produced using QGIS, and experts can provide Geospatial User Feedback (GUF) \citep{zabala2021geospatial}, either to rework the data model, to refine the automatic interpretation process, or more generally to gain knowledge on data quality or the process itself. Such an example of GUF is shown in fig.~\ref{fig:guf}, with the example of a specific area in Liverpool for which a local spatial planning expert went on the field and checked planning documents, to invalidate a building evolution produced by the algorithm. This feedback will then be used to reconsider the algorithm parametrisation or its internal mechanisms.
+
+            \begin{itemize}
+                \item \textbf{Geospatial data matching} algorithms (Geoxygene library) for \textbf{building change detection} between 2011 and 2021.
+                \item \textbf{Geospatial User Feedback} collected from experts on produced evolution maps, to \textbf{improve} data analysis workflows.
+            \end{itemize}
+  
+			
 		}
 		
 	
 		
-		\column{0.6}
-		%==============================================
+	
+	
+\node [above right,outer sep=20pt,minimum width=\textwidth,align=center,draw=none,fill=none, text = IGNGrisFonce] at (bottomleft) {\centering \huge \bf AGILE 2024};
+
+\end{document}
+
+\endinput
+
+
+% Future work 
+
+\begin{itemize}
+				\item \emph{heterogeneous data integration} \cite{bucher2021towards}, to couple densification analysis with socio-economic data;
+                \item develop and explore \emph{simulation models} for the impact of policies on densification processes, parametrise these models with the qualitative data obtained through interviews during the project.
+			\end{itemize}
+
+
+
+	%==============================================
 		% bibliography managed with natbib
 		\block[titlewidthscale=0.3,bodyoffsety=1.8cm,titleoffsety=.1cm]{References}{
 			% This command is to prevent the printing of a second "références" in text and to delete white space between block title and bibliography
@@ -202,13 +243,6 @@ $^{3}$ Leibniz Institute of Ecological Urban and Regional Development
 			\bibliographystyle{plain}
 		}
 	    %==============================================	
-	\end{columns}
-	
-\node [above right,outer sep=20pt,minimum width=\textwidth,align=center,draw=none,fill=none, text = IGNGrisFonce] at (bottomleft) {\centering \huge \bf AGILE 2024};
-
-\end{document}
-
-\endinput
 
 
 \begin{columns}
