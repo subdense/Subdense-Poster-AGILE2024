@@ -108,57 +108,110 @@ $^{3}$ Leibniz Institute of Ecological Urban and Regional Development
 %------------------------------------------------------
 %----------------LINE 1--------------------------------
 %------------------------------------------------------
-	\begin{columns}
-	
-		
-		\column{0.5}% Width set relative to text width
-		
-	
-		%==============================================
-		\block[titlewidthscale=0.5]{Context}{
+% block alone on its line so you don't have to specify the columns environment
 
-            \vspace{1cm}
+
+		%==============================================
+		\block[titlewidthscale=0.5]{Context: The SubDense project}{
+
             
 			\begin{itemize}
-				\item Suburban densification as a tool for more \emph{sustainable cities} while avoiding many negative externalities linked to center densification (scarcity of space, price increase, housing shortage) \cite{jehling2020densification}
-                \vspace{0.5cm}
-				\item \emph{Multiple rationalities / conceptions of space} for involved stakeholders (landowners, policy makers, inhabitants) coexist \cite{hartmann2019diversity}
-                \vspace{0.5cm}
-                \item Considerable \emph{planning challenges} in associated incremental development, need for new policy insights and frameworks \cite{dunnning2020planning}
+				\item Suburban densification can yield more \emph{sustainable cities} while avoiding over-densification in centres.
+				\item Coexistence of \emph{multiple rationalities} for involved stakeholders imply considerable \emph{planning challenges}.
 			\end{itemize}
+
+                 \bigskip
+
+                The \textbf{SubDense} European project aims at better understanding how diverse \textbf{strategies of land policy} shape suburban densification across different \textbf{planning systems} (France, Germany, UK).
+   
 		}
 		%==============================================
-		
-		% Second column on same line than first one
-		\column{0.5}
-	    %==============================================
-		\block[titlewidthscale=0.7]{The SubDense project}{
 
+  
 
-            The \textbf{SubDense} European project aims at better understanding \textbf{the polyrationalities of space, actors and policies on suburban densification}, by
-
-            \bigskip
-
-            $\rightarrow$ exploring how diverse strategies of land policy interact with landowners' and local stakeholders' interest and agency to shape suburban densification and their impact on suburbia across different planning systems (France, Germany, UK);
-
-            \bigskip
-
-            $\rightarrow$ combining quantitative approaches (geodata analysis and geosimulation) with qualitative approaches (social and policy science and planning).
-            
-		
-		}
-		%==============================================
-		
-		
-		%==============================================
-		%end of first line
-	\end{columns}
 	
+	%==============================================
+	\block[titlewidthscale=0.5]{Collaborative dashboard}{
+		\parbox{0.5\textwidth}{
+			\begin{mdframed}
+                \includegraphics[width=\linewidth]{figures/dashboard.png}
+		      \end{mdframed}
+            }
+         \hspace{1cm}
+		\parbox{0.3\textwidth}{
+            
+            $\rightarrow$ A \textbf{collaborative dashboard} as a medium to \textbf{facilitate collaboration} between partners, \textbf{share methods, data and metadata} \cite{bucher2020conciliating}, and ensure reproducibility 
+
+            
+   
+		}
+		%==============================================
+	}
+
+
+        \block[titlewidthscale=0.5]{Architecture and implementation}{
+
+            \parbox{0.5\textwidth}{
+			\begin{mdframed}
+                \includegraphics[width=\linewidth]{figures/dashboard.png}
+		      \end{mdframed}
+            }
+         
+			$\rightarrow$ The \textbf{git-based architecture} for the core dashboard ensures tractability, full history, reproducibility, flexibility, and collaboration through branching, shared remote repository (\url{https://github.com/subdense}).
+
+            \bigskip
+    
+            $\rightarrow$ Clients implement interactions with the core and functionalities needed by partners for data analysis and integration (running change detection algorithms, adding data, exploring results and maps, \ldots).
+
+
+           % $\rightarrow$ An iterative process to produce \textbf{user stories}, finally leading to some specifications for the core architecture and functionalities of clients.
+
+
+        }
+
+         
 %------------------------------------------------------
-%----------------LINE 2--------------------------------
+%----------------LINE 4--------------------------------
 %------------------------------------------------------
 
 	\begin{columns}
+		%In this block you can specify possible improvment or any extra information
+		\column{0.4}
+		%==============================================
+		\block[titlewidthscale=0.65]{Future work}{
+			\begin{itemize}
+				\item \emph{heterogeneous data integration} \cite{bucher2021towards}, to couple densification analysis with socio-economic data;
+                \item develop and explore \emph{simulation models} for the impact of policies on densification processes, parametrise these models with the qualitative data obtained through interviews during the project.
+			\end{itemize}
+		}
+		
+	
+		
+		\column{0.6}
+		%==============================================
+		% bibliography managed with natbib
+		\block[titlewidthscale=0.3,bodyoffsety=1.8cm,titleoffsety=.1cm]{References}{
+			% This command is to prevent the printing of a second "références" in text and to delete white space between block title and bibliography
+			\renewcommand\refname{\vskip -2cm}
+			% Bibliography input. 
+			%Refrences should be added directly to the Biblio.bib file. Refrences should in bibTex Format. Every Reference cited in the poster will be automatically added.
+            \footnotesize
+   
+			\bibliography{Biblio}
+			% Plain style so that cited articles appear as number in the poster and are only fully displayed here
+			\bibliographystyle{plain}
+		}
+	    %==============================================	
+	\end{columns}
+	
+\node [above right,outer sep=20pt,minimum width=\textwidth,align=center,draw=none,fill=none, text = IGNGrisFonce] at (bottomleft) {\centering \huge \bf AGILE 2024};
+
+\end{document}
+
+\endinput
+
+
+\begin{columns}
 		
 		\column{0.5}
 		%==============================================
@@ -213,92 +266,6 @@ $^{3}$ Leibniz Institute of Ecological Urban and Regional Development
 		
 		
 	\end{columns}
-	
-%------------------------------------------------------
-%----------------LINE 3--------------------------------
-%------------------------------------------------------
-
-	% block alone on its line so you don't have to specify the columns environment
-
-	%==============================================
-	\block[titlewidthscale=0.25]{Collaborative dashboard}{
-		\parbox{0.6\textwidth}{
-			\begin{mdframed}
-                \includegraphics[width=\linewidth]{figures/dashboard_archi.png}
-		      \end{mdframed}
-        }
-        \hspace{1cm}
-		\parbox{0.3\textwidth}{
-            
-            $\rightarrow$ A \textbf{collaborative dashboard} as a medium to \textbf{facilitate collaboration} between partners, \textbf{share methods, data and metadata} \cite{bucher2020conciliating}, and ensure reproducibility 
-
-            \bigskip
-              
-              % Ensures trackability, full history, reproducibility, flexibility
-              % Ensure collaboration 
-			$\rightarrow$ The \textbf{git-based architecture} for the core dashboard ensures tractability, full history, reproducibility, flexibility, and collaboration through branching, shared remote repository (\url{https://github.com/subdense}).
-
-            \bigskip
-    
-            $\rightarrow$ Clients will implement interactions with the core and functionalities needed by partners for data analysis and integration (running change detection algorithms, adding data, exploring results and maps, \ldots).
-
-            % Implementation: from user stories to dashboard specifications
-            %     We propose an iterative process: progressive refinement of user stories and associated specifications​
-            %List of dashboard clients/functionalities to be enriched, and discussed regarding what has priority/is feasible​
-            %Architecture of the repository, ways to describe metadata, data pointers, processes, etc. and to link between all, to be defined based on user stories/practices
-            %Users do not need to have git skills or contribute directly to the repository to produce user stories => shared document for these stories?
-   
-            \bigskip
-
-            $\rightarrow$ An iterative process to produce \textbf{user stories}, finally leading to some specifications for the core architecture and functionalities of clients.
-
-   
-		}
-		%==============================================
-	}
-	
-%------------------------------------------------------
-%----------------LINE 4--------------------------------
-%------------------------------------------------------
-
-	\begin{columns}
-		%In this block you can specify possible improvment or any extra information
-		\column{0.4}
-		%==============================================
-		\block[titlewidthscale=0.65]{Future work}{
-			\begin{itemize}
-				\item \emph{heterogeneous data integration} \cite{bucher2021towards}, to couple densification analysis with socio-economic data;
-                \item develop and explore \emph{simulation models} for the impact of policies on densification processes, parametrise these models with the qualitative data obtained through interviews during the project.
-			\end{itemize}
-		}
-		
-	
-		
-		\column{0.6}
-		%==============================================
-		% bibliography managed with natbib
-		\block[titlewidthscale=0.3,bodyoffsety=1.8cm,titleoffsety=.1cm]{References}{
-			% This command is to prevent the printing of a second "références" in text and to delete white space between block title and bibliography
-			\renewcommand\refname{\vskip -2cm}
-			% Bibliography input. 
-			%Refrences should be added directly to the Biblio.bib file. Refrences should in bibTex Format. Every Reference cited in the poster will be automatically added.
-            \footnotesize
-   
-			\bibliography{Biblio}
-			% Plain style so that cited articles appear as number in the poster and are only fully displayed here
-			\bibliographystyle{plain}
-		}
-	    %==============================================	
-	\end{columns}
-	
-\node [above right,outer sep=20pt,minimum width=\textwidth,align=center,draw=none,fill=none, text = IGNGrisFonce] at (bottomleft) {\centering \huge \bf AGILE 2024};
-
-\end{document}
-
-\endinput
-
-
-
 
 
 % Third column on first line
